@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name     = 'fork_pool'
-  spec.version  = '0.1.0'
+  spec.version  = '0.1.1'
   spec.authors  = ["Roman Le Négrate"]
   spec.email    = ["roman.lenegrate@gmail.com"]
   spec.summary  = "Parallelization through forking"
