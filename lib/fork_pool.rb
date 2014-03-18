@@ -69,7 +69,7 @@ private
         pipes.each &:init_child
         @jobs_pipe.up.w.puts
         while idx = @jobs_pipe.down.r.gets
-          done = @done_pipe.w.method(:puts)
+          done = lambda { @done_pipe.w.puts }
           jobs.fetch(idx.to_i).call(done)
           @jobs_pipe.up.w.puts
         end
