@@ -1,8 +1,5 @@
 class ForkPool
-  def initialize(jobs, concurrency=jobs.length, **opts)
-    on_start = opts[:on_start] || lambda { }
-    on_done  = opts[:on_done] || lambda { }
-
+  def initialize(jobs, concurrency=jobs.length, on_start: lambda {}, on_done: lambda { })
     @workers      = Array.new(concurrency) { Worker.new(jobs, on_start) }
     @job_indexes  = jobs.length.times
     @on_done      = on_done
